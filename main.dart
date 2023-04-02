@@ -56,7 +56,9 @@ class NavigationDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.info),
             title: Text("Items"),
-            onTap: () => Navigator.of(context).pop(),
+             onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DummyPage1(),
           ),
         ],
       ),
