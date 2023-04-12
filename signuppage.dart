@@ -1,36 +1,34 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:homeventoryapp/signuppage.dart';
 import 'homepage.dart';
 import 'layoutpage.dart';
 
-class LoginPage extends StatefulWidget {
-const LoginPage({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
-@override
-State<LoginPage> createState() => _LoginPageState();
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  login() async {
-    User? CurrentUser;
-
+  signUp() async {
+    User? currentUser;
     await firebaseAuth
-        .signInWithEmailAndPassword(
+        .createUserWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim())
         .then((auth) {
-      CurrentUser = auth.user;
+      currentUser = auth.user;
     }).catchError((error) {
       print(error);
     });
 
-    if (CurrentUser != null) {
+    if (currentUser != null) {
       Navigator.push(
           context, MaterialPageRoute(builder: (c) => const HomePage()));
     }
@@ -40,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.cyanAccent[200],
+        backgroundColor: Colors.orange[200],
         body: SingleChildScrollView(
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
@@ -58,14 +56,14 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            'Welcome to Homeventory',
+                            'Welcome',
                             style: TextStyle(
                                 fontSize: 50,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
                           Text(
-                            'Welcome',
+                            'We are always available to give \n you the best services',
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -102,16 +100,16 @@ class _LoginPageState extends State<LoginPage> {
                                 height: 40,
                               ),
                               Text(
-                                'LOGIN',
+                                'SIGN UP',
                                 style: TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.cyanAccent[300]),
+                                    color: Colors.blue[300]),
                               ),
                               Text(
-                                'Login',
+                                'we offer the best services',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent[300], fontSize: 20),
+                                    color: Colors.blue[300], fontSize: 20),
                               ),
                             ],
                           )
@@ -121,13 +119,13 @@ class _LoginPageState extends State<LoginPage> {
                       FieldText('Password', Icons.lock, passwordController),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.cyanAccent[300],
+                            backgroundColor: Colors.blue[300],
                           ),
                           onPressed: () {
-                            login();
+                            signUp();
                           },
                           child: const Text(
-                            'Enter',
+                            'access',
                             style: TextStyle(fontSize: 20),
                           )),
                       const SizedBox(
@@ -137,23 +135,20 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'don\'t have an account yet',
-                            style: TextStyle(color: Colors.cyanAccent[300]),
+                            'Already have an account',
+                            style: TextStyle(color: Colors.blue[300]),
                           ),
                           const SizedBox(
                             width: 5,
                           ),
                           InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (c) => const SignUpPage()));
+                              Navigator.pop(context);
                             },
                             child: const Text(
-                              'SignUp',
+                              'Sign',
                               style: TextStyle(
-                                  color: Colors.cyanAccent,
+                                  color: Colors.blue,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
