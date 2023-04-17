@@ -58,16 +58,16 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            'Welcome to Homeventory',
+                            ' Welcome to \n Homeventory',
                             style: TextStyle(
-                                fontSize: 50,
+                                fontSize: 40,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
                           Text(
-                            'Welcome',
+                            'Please sign into your account',
                             style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                                     color: Colors.cyanAccent[300]),
                               ),
                               Text(
-                                'Login',
+                                'Enter email and password',
                                 style: TextStyle(
                                     color: Colors.cyanAccent[300], fontSize: 20),
                               ),
@@ -137,11 +137,11 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'don\'t have an account yet',
+                            'Don\'t have an account yet',
                             style: TextStyle(color: Colors.cyanAccent[300]),
                           ),
                           const SizedBox(
-                            width: 5,
+                            width: 8,
                           ),
                           InkWell(
                             onTap: () {
@@ -151,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                                       builder: (c) => const SignUpPage()));
                             },
                             child: const Text(
-                              'SignUp',
+                              'Sign Up',
                               style: TextStyle(
                                   color: Colors.cyanAccent,
                                   fontWeight: FontWeight.bold),
@@ -170,3 +170,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
