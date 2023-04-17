@@ -63,7 +63,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 color: Colors.white),
                           ),
                           Text(
-                            'Your one stop for all \n Home Inventory items',
+                            ' Your one stop for all \n Home Inventory items',
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
