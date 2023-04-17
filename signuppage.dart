@@ -63,7 +63,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 color: Colors.white),
                           ),
                           Text(
-                            'We are always available to give \n you the best services',
+                            'Your one stop for all \n Home Inventory items',
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold,
@@ -107,7 +107,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     color: Colors.blue[300]),
                               ),
                               Text(
-                                'we offer the best services',
+                                'We offer the best!',
                                 style: TextStyle(
                                     color: Colors.blue[300], fontSize: 20),
                               ),
@@ -125,7 +125,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             signUp();
                           },
                           child: const Text(
-                            'access',
+                            'Enter',
                             style: TextStyle(fontSize: 20),
                           )),
                       const SizedBox(
@@ -146,7 +146,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               Navigator.pop(context);
                             },
                             child: const Text(
-                              'Sign',
+                              'Sign In',
                               style: TextStyle(
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold),
