@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import '../Theme/colorTheme.dart';
 import 'Rooms.dart';
-import '../../main.dart';
+
+
 
 //Creating a Rooms Page...
 
@@ -17,7 +18,7 @@ class Room {
 }
 
 class RoomPage extends StatefulWidget {
-  const RoomPage({super.key});
+  const RoomPage({super.key, required roomId, required roomName});
 
   @override
   _RoomPageState createState() => _RoomPageState();
@@ -30,6 +31,8 @@ class _RoomPageState extends State<RoomPage> {
   final FocusNode _focusNode = FocusNode();
 
   int roomCount = 0;
+
+  static get db => null;
 
 // Adds a new Room Object
   void _addRoom() async {
@@ -86,7 +89,7 @@ class _RoomPageState extends State<RoomPage> {
                   Navigator.push(
                       context,
                       PageTransition(
-                          child: RoomsPage(
+                          child: RoomPage(
                             roomId: rooms[index].id,
                             roomName: rooms[index]['roomName'],
                           ),
