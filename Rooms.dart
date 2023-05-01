@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import '../Theme/colorTheme.dart';
-import 'Rooms.dart';
-
+import 'package:firebase_core/firebase_core.dart';
 
 
 //Creating a Rooms Page...
@@ -32,7 +30,9 @@ class _RoomPageState extends State<RoomPage> {
 
   int roomCount = 0;
 
-  static get db => null;
+  static get db => '';
+
+
 
 // Adds a new Room Object
   void _addRoom() async {
@@ -155,7 +155,7 @@ class _RoomPageState extends State<RoomPage> {
                   child: Card(
                     elevation: 8,
                     color: Colors.transparent,
-                    shadowColor: homeventory.background,
+                    shadowColor: Colors.blue,
                     surfaceTintColor: Colors.transparent,
                     child: Container(
                       height: 50,
@@ -163,7 +163,7 @@ class _RoomPageState extends State<RoomPage> {
                       // color: homeventory.secondary,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: homeventory.secondary,
+                        color: Colors.blue,
                         borderRadius: BorderRadius.circular(15),
                         // boxShadow: const [
                         //   BoxShadow(
@@ -177,7 +177,7 @@ class _RoomPageState extends State<RoomPage> {
                       child: Text(
                         rooms[index]['RoomName'],
                         style: TextStyle(
-                          color: homeventory.onSecondary,
+                          color: Colors.blue,
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                           fontFamily: "GoogleFonts.poppins()",
@@ -243,4 +243,5 @@ class _RoomPageState extends State<RoomPage> {
       ),
     );
   }
+
 }
